@@ -17,10 +17,6 @@ type job struct {
 
 func (j job) Execute() error {
 
-	if !validURL.MatchString(j.url) {
-		return fmt.Errorf("invalid url")
-	}
-
 	var c = &http.Client{
 		Timeout: time.Second * 10,
 	}
